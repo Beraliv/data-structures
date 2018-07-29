@@ -7,6 +7,7 @@ let StackFactory = () => {
 
         push(element) {
             elements.push(element)
+            return this
         }
 
         pop() {
