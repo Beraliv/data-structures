@@ -7,6 +7,7 @@ let QueueFactory = () => {
 
         enqueue(element) {
             elements.push(element)
+            return this
         }
 
         dequeue() {
