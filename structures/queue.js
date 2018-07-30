@@ -1,4 +1,4 @@
-let QueueFactory = () => {
+const QueueFactory = () => {
     let elements
     class Queue {
         constructor() {
@@ -28,4 +28,9 @@ let QueueFactory = () => {
     return new Queue()
 }
 
-export default QueueFactory
+const queue = QueueFactory()
+queue.enqueue(1).enqueue(2).enqueue(3).enqueue(4)   // front -> 1 -> 2 -> 3 -> 4 <- back
+console.log(queue.dequeue())                        // 1
+queue                                               // front -> 2 -> 3 -> 4 <- back
+console.log(queue.back)                             // 4
+console.log(queue.front)                            // 2
