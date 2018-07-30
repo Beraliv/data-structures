@@ -4,9 +4,7 @@ const swap = (arr, i, j) => {
     arr[j] = temp
 }
 
-const quickSort = (arr, start = 0, end = arr.length - 1) => {
-    console.log(arr, start, end)
-
+const partition = (arr, start, end) => {
     const pivot = arr[Math.floor((start + end) / 2)]
     let i = start, j = end
 
@@ -24,6 +22,14 @@ const quickSort = (arr, start = 0, end = arr.length - 1) => {
             j--
         }
     }
+
+    return i
+}
+
+const quickSort = (arr, start = 0, end = arr.length - 1) => {
+    console.log(arr, start, end)
+    
+    const i = partition(arr, start, end)
 
     if (start < i - 1) {
         quickSort(arr, start, i - 1)
